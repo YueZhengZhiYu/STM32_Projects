@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.yujing.chuankou">
+
+    <!--网络-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- SD卡权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="${app_name}"
+        android:networkSecurityConfig="@xml/network_config"
+        android:roundIcon="@mipmap/icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:label">
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.SendActivity" />
+        <activity android:name=".activity.myTest.SendFileActivity" />
+        <activity android:name=".activity.myTest.MyMainActivity" />
+        <activity android:name=".activity.myTest.SyncActivity" />
+        <activity
+            android:name=".activity.wifi.SerialPortToWiFiActivity"
+            android:screenOrientation="landscape" />
+    </application>
+</manifest>
